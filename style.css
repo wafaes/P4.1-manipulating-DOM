@@ -1,0 +1,17 @@
+*{
+    margin: 0;
+    padding: 0;
+}
+.card {
+    margin-bottom: 20px;
+
+}
+
+.container{
+    background-color: aqua;
+    width: 100%;
+}
+
+.container-custom {
+    /*padding: 300px;*/
+}
