@@ -2,16 +2,76 @@
     margin: 0;
     padding: 0;
 }
-.card {
-    margin-bottom: 20px;
 
+main{
+    background-color: #1c2833;
 }
 
-.container{
-    background-color: aqua;
+.card {
+    margin-bottom: 20px;
+    position: relative;
+    overflow: hidden;
+}
+
+.card img{
+    width: 100%;
+    transition: transform 0.3s ease;
+}
+
+.card-title{
+    color: white;
+    z-index: 2;
+    position: relative;
+}
+
+.card-body{
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    color: white;
+    background-color: rgba(255, 255, 255, 0.2); /* Para un leve fondo */
+    opacity: 0;
+    backdrop-filter: blur(0px);
+    transition: opacity 0.3s ease, backdrop-filter 0.3s ease;
+}
+
+
+
+.container {
+    /*padding: 300px;*/
+    background-color: #1c2833;
     width: 100%;
 }
 
-.container-custom {
-    /*padding: 300px;*/
+.card-text{
+    display: none;
+}
+
+.glass-effect {
+    background-color: rgba(255, 255, 255, 0.2); /* Semi-transparent background */
+    backdrop-filter: blur(10px); /* Creates the frosted glass effect */
+    transition: 0.3s ease; /* Smooth transition */
+}
+
+.glass-effect:hover .card-body{
+    backdrop-filter: blur(15px); /* Increase blur on hover */
+    background-color: rgba(215, 30, 110, 0.3); /* Make it slightly more opaque */
+}
+
+.glass-effect:hover img {
+    transform: scale(1.1); /* Zoom en la imagen al hacer hover */
+}
+
+.glass-effect:hover .card-title {
+    display: none; /* Oculta el título en el hover */
+}
+
+.glass-effect:hover .card-text {
+    display: block; /* Muestra la descripción en el hover */
 }
